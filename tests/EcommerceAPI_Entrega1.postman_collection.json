@@ -1,0 +1,130 @@
+{
+  "info": {
+    "name": "API Backend Ecommerce \u2014 Entrega 1",
+    "_postman_id": "b6b98b4e-1c1d-4b88-8fcb-28a3f2c01000",
+    "description": "Colecci\u00f3n de pruebas para la Entrega 1 - API de Productos y Carritos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Productos",
+      "item": [
+        {
+          "name": "1 - Listar todos los productos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/products"
+            }
+          }
+        },
+        {
+          "name": "2 - Crear producto nuevo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Teclado Mec\\u00e1nico\",\n  \"description\": \"RGB - Switch Blue\",\n  \"code\": \"TEC01\",\n  \"price\": 15000,\n  \"status\": true,\n  \"stock\": 10,\n  \"category\": \"Perif\\u00e9ricos\",\n  \"thumbnails\": [\n    \"img1.jpg\"\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products"
+            }
+          }
+        },
+        {
+          "name": "3 - Ver producto por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/products/1"
+            }
+          }
+        },
+        {
+          "name": "4 - Actualizar producto",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 16000,\n  \"stock\": 8\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/1"
+            }
+          }
+        },
+        {
+          "name": "5 - Eliminar producto",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/products/1"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Carritos",
+      "item": [
+        {
+          "name": "6 - Crear carrito vac\u00edo",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/api/carts"
+            }
+          }
+        },
+        {
+          "name": "7 - Ver productos del carrito",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/carts/1"
+            }
+          }
+        },
+        {
+          "name": "8 - Agregar producto al carrito",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/api/carts/1/product/1"
+            }
+          }
+        },
+        {
+          "name": "9 - Agregar el mismo producto otra vez",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/api/carts/1/product/1"
+            }
+          }
+        },
+        {
+          "name": "10 - Ver carrito actualizado",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/carts/1"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
